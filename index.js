@@ -49,7 +49,7 @@ function createWindow() {
                             { name: "Forge Viewer Model", extensions: ['svf', 'f2d'] }
                         ]
                     });
-                    if (filePaths.length > 0) {
+                    if (filePaths && filePaths[0]) {
                         win.loadURL(getUrl(filePaths[0]));
                     }
                 }
@@ -91,7 +91,7 @@ function createWindow() {
             click: () => {
                 electron.shell.openExternal("http://novashang.com");
             }
-        }, , {
+        }, {
             label: "Github Repo",
             click: () => {
                 electron.shell.openExternal("https://github.com/NovaShang/svf-viewer");
@@ -108,8 +108,11 @@ function createWindow() {
 
     win.on('closed', () => {
         win = null;
-        electron.app.quit();
     })
 }
 
 electron.app.on('ready', createWindow)
+
+electron.app.on('window-all-closed', () => {
+    electron.app.quit()
+})
