@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SVF Viewer</title>
+    <meta charset="utf-8" />
+    <script>
+        var erequire = require;
+        delete require;
+    </script>
+
+    <!-- Uncomment these lines to use local forge viewer files -->
+    <!-- <link href="./forgeviewer/style.css" rel="stylesheet" />
+    <script src="./forgeviewer/three.js"></script>
+    <script src="./forgeviewer/viewer3D.js"></script> 
+    -->
+
+    <!-- Uncomment these lines to use online forge viewer files -->
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/style.min.css" type="text/css">
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/three.min.js"></script>
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/viewer3D.min.js"></script>
+
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0px;
+            height: 100%;
+        }
+        
+        .viewer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="viewer">
+    </div>
+    <script src="./viewer.js"></script>
+</body>
+
+</html>
